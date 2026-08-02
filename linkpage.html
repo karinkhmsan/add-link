@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ชื่อของเรา</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #1a1a2e, #16213e);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    margin-bottom: 16px;
+  }
+
+  .name {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+
+  .bio {
+    color: #cfd2e0;
+    font-size: 14px;
+    margin: 0 0 28px;
+  }
+
+  .link-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1a1a2e;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .link-btn:hover {
+    transform: translateY(-2px);
+    background: #f0f0f0;
+  }
+
+  /* ปรับสีปุ่มแต่ละแพลตฟอร์มได้ตรงนี้ */
+  .link-btn.tiktok   { background: #010101; color: #fff; }
+  .link-btn.youtube  { background: #ff0000; color: #fff; }
+  .link-btn.facebook { background: #1877f2; color: #fff; }
+  .link-btn.discord  { background: #5865f2; color: #fff; }
+  .link-btn.donate   { background: #ffcc00; color: #1a1a2e; }
+
+  .footer {
+    color: #6b6f8a;
+    font-size: 12px;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <img class="avatar" src="https://via.placeholder.com/110" alt="โปรไฟล์">
+    <p class="name">ชื่อของเรา</p>
+    <p class="bio">คำโปรยสั้นๆ เกี่ยวกับตัวเรา</p>
+
+    <a class="link-btn tiktok" href="https://tiktok.com/@yourname" target="_blank">🎵 TikTok</a>
+    <a class="link-btn youtube" href="https://youtube.com/@yourname" target="_blank">▶️ YouTube</a>
+    <a class="link-btn facebook" href="https://facebook.com/yourname" target="_blank">📘 Facebook</a>
+    <a class="link-btn discord" href="https://discord.gg/yourinvite" target="_blank">💬 Discord</a>
+    <a class="link-btn donate" href="https://yourdonatepage.com" target="_blank">💰 โดเนท</a>
+
+    <p class="footer">© 2026 ชื่อของเรา</p>
+  </div>
+
+</body>
+</html>
