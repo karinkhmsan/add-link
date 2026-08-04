@@ -26,6 +26,18 @@
     max-width: 420px;
     text-align: center;
   }
+  .notice {
+    display: none;
+    background: #1a5f97;
+    color: #efeff3;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
 
   .avatar {
     width: 110px;
@@ -85,12 +97,41 @@
     <img class="avatar" src="bdd6c1f2-cd41-495c-9d8d-fbc5f93fa4bd.jpg" alt="โปรไฟล์">
     <p class="name">@kanna_san38</p>
     <p class="bio">สวัสดีครับ ผมมีชื่อว่าเฟิ้ดเฟิดนะคับ✨ ขอบคุณที่เข้ามารับชมและคอยสนับสนุนผมนะครับ🔥</p>
+    <p class="notice" id="timeNotice">⚠️ การโดเนทผ่าน FredFred อาจจะช้าในขณะนี้ แนะนำให้ใช้ EasyDonate</p>
 
     <a class="link-btn easydonate" href="https://easydonate.app/kanna_san38" target="_blank">EasyDonate</a>
     <a class="link-btn rindonate" href="https://ferdferddonates-production.up.railway.app/donate.html" target="_blank">FerdFerd Donate</a>
 
     <p class="footer">© 2026 kanna_san38</p>
   </div>
+  <script>
+  function checkNoticeTime() {
+    // ดึงเวลาปัจจุบันโดยแปลงให้เป็น Timezone ของประเทศไทย (Asia/Bangkok)
+    var thaiHour = parseInt(
+      new Date().toLocaleString('en-US', {
+        timeZone: 'Asia/Bangkok',
+        hour: 'numeric',
+        hour12: false
+      }),
+      10
+    );
+
+    var noticeElement = document.getElementById('timeNotice');
+    
+    // เช็คเงื่อนไขช่วงเวลา 22:00 - 01:59 น. ตามเวลาไทย
+    if (thaiHour >= 22 || thaiHour < 2) {
+      noticeElement.style.display = 'block';
+    } else {
+      noticeElement.style.display = 'none';
+    }
+  }
+
+  // เรียกทำงานทันทีที่โหลดหน้า
+  checkNoticeTime();
+
+  // อัปเดตเช็คเวลาใหม่ทุกๆ 1 นาที
+  setInterval(checkNoticeTime, 60000);
+</script>
 
 </body>
 </html>
